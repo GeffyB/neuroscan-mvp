@@ -1,6 +1,6 @@
 // ===============================================
 // 📄 ARQUIVO: src/app/cadastro/page.tsx
-// 🎯 OBJETIVO: Coletar dados do respondente e, se necessário, do avaliado
+// 🎯 OBJETIVO: Coletar dados do respondente e avaliado com UF + cidade padronizados
 // ===============================================
 
 "use client";
@@ -8,6 +8,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/store/userStore";
+import estadosCidades from "@/data/estados-cidades.json";
 
 export default function Cadastro() {
   const router = useRouter();
@@ -18,8 +19,11 @@ export default function Cadastro() {
   // 🍍 Dados do respondente
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [cidade, setCidade] = useState("");
   const [nascimento, setNascimento] = useState("");
+  const [estadoUF, setEstadoUF] = useState("");
+  const [cidadeSelecionada, setCidadeSelecionada] = useState("");
+
+  const cidadesDoEstado = estadosCidades.find((e) => e.sigla === estadoUF)?.cidades || [];
 
   // 🧒 Dados do avaliado (caso outro)
   const [nomeAvaliado, setNomeAvaliado] = useState("");
@@ -29,7 +33,7 @@ export default function Cadastro() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nome || !email || !cidade || !nascimento) {
+    if (!nome || !email || !nascimento || !estadoUF || !cidadeSelecionada) {
       alert("Preencha todos os campos obrigatórios.");
       return;
     }
@@ -37,7 +41,7 @@ export default function Cadastro() {
     setRespondente({
       nome,
       email,
-      cidade,
+      cidade: `${cidadeSelecionada} - ${estadoUF}`,
       nascimento,
       paraOutraPessoa: !meRespondo,
     });
@@ -69,11 +73,33 @@ export default function Cadastro() {
         <label>E-mail:</label>
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
-        <label>Cidade e Estado:</label>
-        <input value={cidade} onChange={(e) => setCidade(e.target.value)} required />
-
         <label>Data de nascimento:</label>
         <input type="date" value={nascimento} onChange={(e) => setNascimento(e.target.value)} required />
+
+        <label>Estado (UF):</label>
+        <select value={estadoUF} onChange={(e) => setEstadoUF(e.target.value)} required>
+          <option value="">Selecione um estado</option>
+          {estadosCidades.map((estado) => (
+            <option key={estado.sigla} value={estado.sigla}>
+              {estado.nome} ({estado.sigla})
+            </option>
+          ))}
+        </select>
+
+        <label>Cidade:</label>
+        <select
+          value={cidadeSelecionada}
+          onChange={(e) => setCidadeSelecionada(e.target.value)}
+          required
+          disabled={!estadoUF}
+        >
+          <option value="">Selecione uma cidade</option>
+          {cidadesDoEstado.map((cidade) => (
+            <option key={cidade.id} value={cidade.nome}>
+              {cidade.nome}
+            </option>
+          ))}
+        </select>
 
         <div style={{ marginTop: "1em" }}>
           <label>Você está fazendo o teste para:</label><br />
