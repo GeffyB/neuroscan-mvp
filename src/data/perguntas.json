@@ -1,0 +1,642 @@
+[
+  {
+    "id": "TDAH1",
+    "texto": "Você frequentemente tem dificuldade em manter a atenção em tarefas?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH2",
+    "texto": "Você costuma se distrair com estímulos ao redor facilmente?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH3",
+    "texto": "Você frequentemente interrompe os outros quando estão falando?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH4",
+    "texto": "Você tem dificuldade em esperar sua vez em atividades ou jogos?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH5",
+    "texto": "Você frequentemente começa atividades sem ler ou ouvir instruções até o fim?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH6",
+    "texto": "Você perde objetos necessários para tarefas (como lápis, cadernos)?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH7",
+    "texto": "Você evita ou adia tarefas que exigem esforço mental prolongado?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH8",
+    "texto": "Você frequentemente se levanta da cadeira quando deveria permanecer sentado?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH9",
+    "texto": "Você age de forma impulsiva, sem pensar nas consequências?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TDAH10",
+    "texto": "Você esquece compromissos ou tarefas com frequência?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TDAH"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA1",
+    "texto": "Você costuma evitar contato visual durante conversas?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA2",
+    "texto": "Você prefere brincar sozinho(a) ao invés de com outras pessoas?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA3",
+    "texto": "Você repete frases ou palavras fora de contexto (ecolalia)?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA4",
+    "texto": "Você se incomoda muito com barulhos altos ou inesperados?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA5",
+    "texto": "Você se apega excessivamente a rotinas e se incomoda com mudanças?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA6",
+    "texto": "Você apresenta movimentos repetitivos (como balançar as mãos ou o corpo)?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA7",
+    "texto": "Você tem dificuldade em entender piadas, sarcasmo ou figuras de linguagem?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA8",
+    "texto": "Você responde de forma atípica a interações sociais (ex: não responde ao nome)?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA9",
+    "texto": "Você demonstra interesse intenso por temas muito específicos?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA10",
+    "texto": "Você tem dificuldade em expressar emoções ou reconhecer emoções em outros?",
+    "tipo": "multipla_escolha",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "criança",
+      "adolescente",
+      "adulto"
+    ],
+    "tempo_limite": 30,
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  }
+]
