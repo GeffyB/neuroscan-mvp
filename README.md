@@ -48,7 +48,7 @@ http://localhost:3000
 
 ## Versão Atual
 
-- **v0.5.0** – Banco clínico completo com 60 perguntas TEA baseado em ADOS-2/ADI-R
+- **v0.6.0** – Sorteio balanceado de perguntas por categoria e faixa etária com uso de Zustand
 
 ---
 
@@ -56,6 +56,8 @@ http://localhost:3000
 
 | Versão   | Data       | Descrição                                                                 |
 |----------|------------|---------------------------------------------------------------------------|
+| v0.6.0   | 2025-05-04 | Sorteio inteligente de 20 perguntas (5 por categoria) com base clínica     |
+| v0.5.0   | 2025-05-04 | Integração do banco TEA completo com 60 perguntas categorizadas ADOS/ADI-R |
 | v0.4.0   | 2025-05-04 | Teste interativo com timer, validação, bloqueio de resposta e Zustand     |
 | v0.3.2   | 2025-05-03 | Cadastro com seleção de Estado + Cidade usando base oficial completa      |
 | v0.3.0   | 2025-05-03 | Formulário de cadastro com fluxo condicional (respondente e avaliado)     |

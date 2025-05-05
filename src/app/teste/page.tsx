@@ -1,28 +1,62 @@
 // ===============================================
 // 📄 ARQUIVO: src/app/teste/page.tsx
-// 🎯 OBJETIVO: Exibir perguntas, controlar timer e salvar respostas
+// 🎯 OBJETIVO: Sorteio e execução do teste dinâmico com base clínica
 // ===============================================
 
 "use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import perguntas from "@/data/perguntas-tea-avancado.json";
+import perguntasBase from "@/data/perguntas-tea-avancado.json";
 import { useUserStore } from "@/store/userStore";
 
 export default function Teste() {
   const router = useRouter();
-  const { adicionarResposta } = useUserStore();
+  const {
+    avaliado,
+    perguntasSorteadas,
+    setPerguntasSorteadas,
+    adicionarResposta,
+  } = useUserStore();
 
   const [indiceAtual, setIndiceAtual] = useState(0);
-  const [tempoRestante, setTempoRestante] = useState(perguntas[0].tempo_limite);
+  const [tempoRestante, setTempoRestante] = useState(0);
   const [respostaSelecionada, setRespostaSelecionada] = useState<number | null>(null);
   const [podeAvancar, setPodeAvancar] = useState(false);
 
+  // 🔀 Função de sorteio balanceado
+  function sortearPerguntas() {
+    const idade = avaliado?.idade || 18;
+    const faixa = idade < 13 ? "crianca" : idade < 18 ? "adolescente" : "adulto";
+
+    const categorias = ["Comunicação Social", "Interação Recíproca", "Comportamentos Repetitivos", "Sensorialidade"];
+    let selecionadas: typeof perguntasBase = [];
+
+    categorias.forEach((cat) => {
+      const porCategoria = perguntasBase.filter(
+        (p) => p.categoria === cat && p.faixa_etaria.includes(faixa)
+      );
+      const embaralhadas = porCategoria.sort(() => Math.random() - 0.5);
+      selecionadas.push(...embaralhadas.slice(0, 5));
+    });
+
+    return selecionadas.sort(() => Math.random() - 0.5);
+  }
+
+  // 🔁 Ao carregar a página, sorteia se necessário
+  useEffect(() => {
+    if (!perguntasSorteadas.length) {
+      const sorteadas = sortearPerguntas();
+      setPerguntasSorteadas(sorteadas);
+    }
+  }, []);
+
+  const perguntas = perguntasSorteadas;
   const perguntaAtual = perguntas[indiceAtual];
 
-  // Inicia e reseta o timer a cada pergunta
+  // ⏱️ Timer reiniciado a cada pergunta
   useEffect(() => {
+    if (!perguntaAtual) return;
     setTempoRestante(perguntaAtual.tempo_limite);
     setRespostaSelecionada(null);
     setPodeAvancar(false);
@@ -39,7 +73,7 @@ export default function Teste() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [indiceAtual]);
+  }, [indiceAtual, perguntaAtual]);
 
   const handleAvancar = () => {
     if (respostaSelecionada !== null) {
@@ -52,6 +86,8 @@ export default function Teste() {
       router.push("/resultado");
     }
   };
+
+  if (!perguntaAtual) return <p>🔃 Carregando teste...</p>;
 
   return (
     <div>
