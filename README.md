@@ -48,7 +48,7 @@ http://localhost:3000
 
 ## Versão Atual
 
-- **v0.4.0** – Teste interativo funcional com timer, controle e armazenamento
+- **v0.5.0** – Banco clínico completo com 60 perguntas TEA baseado em ADOS-2/ADI-R
 
 ---
 

@@ -59,7 +59,7 @@ export default function Cadastro() {
       });
     }
 
-    router.push("/teste");
+    router.push("/instrucoes");
   };
 
   return (

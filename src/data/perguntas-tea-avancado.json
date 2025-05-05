@@ -1,0 +1,1982 @@
+[
+  {
+    "id": "TEA001",
+    "texto": "Você evita iniciar conversas, mesmo quando tem interesse no assunto?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA002",
+    "texto": "Você sente dificuldade em manter uma conversa com mais de uma pessoa ao mesmo tempo?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA003",
+    "texto": "Você frequentemente não entende quando alguém muda de assunto abruptamente?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA004",
+    "texto": "Você sente que interpreta mensagens de forma muito literal?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA005",
+    "texto": "Você tem dificuldade em usar ou entender gestos como acenar, apontar, dar tchau?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA006",
+    "texto": "Você já foi dito que seu tom de voz parece monótono ou robótico?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA007",
+    "texto": "Você frequentemente responde perguntas de forma excessivamente direta, sem detalhes adicionais?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA008",
+    "texto": "Você prefere escrever a falar quando precisa se comunicar com clareza?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA009",
+    "texto": "Você se sente desconfortável ao manter uma conversa por telefone?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA010",
+    "texto": "Você costuma evitar contato com atendentes, caixas, ou em filas para não ter que interagir?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA011",
+    "texto": "Você precisa pensar muito antes de responder perguntas simples em conversas?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA012",
+    "texto": "Você sente dificuldade em expressar opiniões ou preferências em grupo?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA013",
+    "texto": "Você já notou que outras pessoas perdem o interesse enquanto você fala?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA014",
+    "texto": "Você se sente mais confortável conversando sobre um assunto específico do que conversas gerais?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA015",
+    "texto": "Você costuma não perceber quando alguém quer encerrar uma conversa?",
+    "categoria": "Comunicação Social",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA016",
+    "texto": "Você sente dificuldade em perceber quando alguém está triste ou desconfortável?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA017",
+    "texto": "Você prefere atividades solitárias mesmo quando está entre amigos ou familiares?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA018",
+    "texto": "Você já foi considerado “frio” ou “distante” emocionalmente por outras pessoas?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA019",
+    "texto": "Você raramente sente vontade de consolar alguém que está chorando ou em sofrimento?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA020",
+    "texto": "Você tem dificuldade em entender expressões faciais sutis como desapontamento ou orgulho?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA021",
+    "texto": "Você evita fazer perguntas pessoais em conversas, mesmo quando apropriado?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA022",
+    "texto": "Você raramente elogia ou compartilha empolgação com os outros?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA023",
+    "texto": "Você sente dificuldade em criar ou manter amizades duradouras?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA024",
+    "texto": "Você evita reuniões sociais mesmo quando envolvem pessoas conhecidas?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA025",
+    "texto": "Você se sente exausto ou confuso após eventos sociais?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA026",
+    "texto": "Você tem interesse em se relacionar afetivamente, mas não sabe como iniciar?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA027",
+    "texto": "Você frequentemente não sabe como agir em momentos de celebração (ex: aniversários, festas)?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA028",
+    "texto": "Você sente que sempre está forçando uma performance social para se encaixar?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA029",
+    "texto": "Você sente que suas reações emocionais são diferentes das pessoas ao seu redor?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA030",
+    "texto": "Você evita o toque físico, mesmo em situações amigáveis ou afetuosas?",
+    "categoria": "Interação Recíproca",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA031",
+    "texto": "Você se sente desconfortável quando sua rotina diária muda inesperadamente?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA032",
+    "texto": "Você já percebeu que tem rituais pessoais rígidos para tarefas simples?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA033",
+    "texto": "Você costuma repetir frases, sons ou palavras mesmo sem perceber?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA034",
+    "texto": "Você se irrita quando alguém muda a ordem dos objetos no seu espaço?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA035",
+    "texto": "Você sente alívio ou prazer em repetir movimentos com as mãos, pés ou objetos?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA036",
+    "texto": "Você organiza seus objetos de forma muito específica e se incomoda se forem movidos?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA037",
+    "texto": "Você revisa mais de uma vez suas ações diárias por medo de esquecer algo (ex: desligar luz)?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA038",
+    "texto": "Você sente compulsão por repetir hábitos mesmo sem um motivo funcional?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA039",
+    "texto": "Você costuma seguir rotinas de forma exata, mesmo que isso te atrase ou complique?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA040",
+    "texto": "Você prefere assistir ou repetir cenas específicas de vídeos ou filmes?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA041",
+    "texto": "Você se interessa intensamente por determinados temas por muito tempo?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA042",
+    "texto": "Você relê ou revisita conteúdos diversos sobre um mesmo assunto por meses seguidos?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA043",
+    "texto": "Você tem uma necessidade intensa de simetria ou alinhamento visual?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA044",
+    "texto": "Você se sente ansioso quando não pode seguir uma ordem ou sequência estabelecida?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA045",
+    "texto": "Você prefere tarefas manuais repetitivas ao invés de atividades variadas?",
+    "categoria": "Comportamentos Repetitivos",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA046",
+    "texto": "Você se incomoda com ruídos como ventiladores, máquinas ou vozes simultâneas?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA047",
+    "texto": "Você sente dor ou irritação com tecidos ou etiquetas de roupas?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA048",
+    "texto": "Você evita lugares muito iluminados ou com luzes piscando?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA049",
+    "texto": "Você prefere comer sempre os mesmos alimentos por textura ou sabor?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA050",
+    "texto": "Você sente desconforto com cheiros que a maioria das pessoas não nota?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA051",
+    "texto": "Você sente necessidade de tocar superfícies com texturas diferentes?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA052",
+    "texto": "Você costuma não perceber que está machucado (ex: cortes, batidas) até alguém avisar?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA053",
+    "texto": "Você sente prazer ou concentração ao observar padrões visuais como linhas, grades ou simetrias?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA054",
+    "texto": "Você evita contato físico mesmo que leve (toque no ombro, mão)?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA055",
+    "texto": "Você gosta de movimentos de balanço, giro ou compressão (como apertar travesseiros)?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA056",
+    "texto": "Você não percebe variações de temperatura com facilidade (muito quente ou frio)?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA057",
+    "texto": "Você tem hipersensibilidade a sons específicos, como alarme, buzina ou assobio?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA058",
+    "texto": "Você sente vontade de cobrir os ouvidos ou olhos em situações comuns (música, luz)?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA059",
+    "texto": "Você procura experiências sensoriais que outros evitam (cheiros fortes, texturas estranhas)?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  },
+  {
+    "id": "TEA060",
+    "texto": "Você reage de forma intensa a estímulos que parecem neutros para outras pessoas?",
+    "categoria": "Sensorialidade",
+    "condicoes": [
+      "TEA"
+    ],
+    "faixa_etaria": [
+      "adolescente",
+      "adulto"
+    ],
+    "peso": 2,
+    "tempo_limite": 30,
+    "tipo": "multipla_escolha",
+    "respostas": [
+      {
+        "texto": "Nunca",
+        "valor": 0
+      },
+      {
+        "texto": "Às vezes",
+        "valor": 1
+      },
+      {
+        "texto": "Frequentemente",
+        "valor": 2
+      },
+      {
+        "texto": "Quase sempre",
+        "valor": 3
+      }
+    ]
+  }
+]

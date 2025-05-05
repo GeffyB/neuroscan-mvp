@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import perguntas from "@/data/perguntas.json";
+import perguntas from "@/data/perguntas-tea-avancado.json";
 import { useUserStore } from "@/store/userStore";
 
 export default function Teste() {
