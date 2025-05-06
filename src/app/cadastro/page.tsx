@@ -1,6 +1,6 @@
 // ===============================================
 // 📄 ARQUIVO: src/app/cadastro/page.tsx
-// 🎯 OBJETIVO: Coletar dados do respondente e avaliado com melhor UI
+// 🎯 OBJETIVO: Coletar dados do respondente e avaliado com campos melhor formatados
 // ===============================================
 
 "use client";
@@ -15,10 +15,10 @@ export default function Cadastro() {
   const { setRespondente, setAvaliado } = useUserStore();
 
   const [meRespondo, setMeRespondo] = useState(true);
-
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [celular, setCelular] = useState("");
+  const [ddd, setDDD] = useState("");
+  const [telefone, setTelefone] = useState("");
   const [ehWhatsapp, setEhWhatsapp] = useState<null | boolean>(null);
   const [nascimento, setNascimento] = useState("");
   const [estadoUF, setEstadoUF] = useState("");
@@ -33,10 +33,12 @@ export default function Cadastro() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nome || !email || !celular || ehWhatsapp === null || !nascimento || !estadoUF || !cidadeSelecionada) {
+    if (!nome || !email || !ddd || !telefone || ehWhatsapp === null || !nascimento || !estadoUF || !cidadeSelecionada) {
       alert("Preencha todos os campos obrigatórios.");
       return;
     }
+
+    const celular = `(${ddd}) ${telefone}`;
 
     setRespondente({
       nome,
@@ -65,20 +67,52 @@ export default function Cadastro() {
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+    <div style={{ maxWidth: 700, margin: "0 auto" }}>
       <h1>📝 Cadastro</h1>
 
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
-        <label>Nome completo:
-          <input value={nome} onChange={(e) => setNome(e.target.value)} required />
+        <label>
+          Nome completo:
+          <input
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            placeholder="Digite aqui seu nome completo..."
+            style={{ width: "100%" }}
+            required
+          />
         </label>
 
-        <label>E-mail:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <label>
+          E-mail:
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="seuemail@provedor.com"
+            required
+          />
         </label>
 
-        <label>Celular:
-          <input type="tel" value={celular} onChange={(e) => setCelular(e.target.value)} required />
+        <label>
+          Celular:
+          <div style={{ display: "flex", gap: "1em" }}>
+            <input
+              type="text"
+              value={ddd}
+              onChange={(e) => setDDD(e.target.value.replace(/\D/g, ""))}
+              placeholder="DDD"
+              maxLength={2}
+              style={{ width: "80px" }}
+              required
+            />
+            <input
+              type="text"
+              value={telefone}
+              onChange={(e) => setTelefone(e.target.value.replace(/\D/g, ""))}
+              placeholder="999999999"
+              required
+            />
+          </div>
         </label>
 
         <div>
@@ -89,7 +123,8 @@ export default function Cadastro() {
               name="ehWhatsapp"
               checked={ehWhatsapp === true}
               onChange={() => setEhWhatsapp(true)}
-            /> Sim
+            />{" "}
+            Sim
           </label>
           <label style={{ marginLeft: "1em" }}>
             <input
@@ -97,15 +132,23 @@ export default function Cadastro() {
               name="ehWhatsapp"
               checked={ehWhatsapp === false}
               onChange={() => setEhWhatsapp(false)}
-            /> Não
+            />{" "}
+            Não
           </label>
         </div>
 
-        <label>Data de nascimento:
-          <input type="date" value={nascimento} onChange={(e) => setNascimento(e.target.value)} required />
+        <label>
+          Data de nascimento:
+          <input
+            type="date"
+            value={nascimento}
+            onChange={(e) => setNascimento(e.target.value)}
+            required
+          />
         </label>
 
-        <label>Estado (UF):
+        <label>
+          Estado (UF):
           <select value={estadoUF} onChange={(e) => setEstadoUF(e.target.value)} required>
             <option value="">Selecione um estado</option>
             {estadosCidades.map((estado) => (
@@ -116,7 +159,8 @@ export default function Cadastro() {
           </select>
         </label>
 
-        <label>Cidade:
+        <label>
+          Cidade:
           <select
             value={cidadeSelecionada}
             onChange={(e) => setCidadeSelecionada(e.target.value)}
@@ -132,33 +176,54 @@ export default function Cadastro() {
           </select>
         </label>
 
-        <div>
-          <p>Você está fazendo o teste para:</p>
+        <div style={{ marginTop: "1em" }}>
+          <label>Você está fazendo o teste:</label>
+          <br />
           <label>
-            <input type="radio" checked={meRespondo} onChange={() => setMeRespondo(true)} /> Mim
+            <input type="radio" checked={meRespondo} onChange={() => setMeRespondo(true)} /> Para você
           </label>
           <label style={{ marginLeft: "1em" }}>
-            <input type="radio" checked={!meRespondo} onChange={() => setMeRespondo(false)} /> Outra pessoa
+            <input type="radio" checked={!meRespondo} onChange={() => setMeRespondo(false)} /> Para outra pessoa
           </label>
         </div>
 
         {!meRespondo && (
-          <>
-            <label>Nome do avaliado:
-              <input value={nomeAvaliado} onChange={(e) => setNomeAvaliado(e.target.value)} required />
+          <div style={{ marginTop: "1em", display: "flex", flexDirection: "column", gap: "1em" }}>
+            <label>
+              Nome do avaliado:
+              <input
+                value={nomeAvaliado}
+                onChange={(e) => setNomeAvaliado(e.target.value)}
+                placeholder="Nome completo da pessoa avaliada"
+                required
+              />
             </label>
 
-            <label>Idade:
-              <input type="number" min={1} value={idadeAvaliado} onChange={(e) => setIdadeAvaliado(e.target.value)} required />
+            <label>
+              Idade:
+              <input
+                type="number"
+                min={1}
+                value={idadeAvaliado}
+                onChange={(e) => setIdadeAvaliado(e.target.value)}
+                placeholder="Ex: 14"
+                required
+              />
             </label>
 
-            <label>Relação com o avaliado:
-              <input value={relacao} onChange={(e) => setRelacao(e.target.value)} required />
+            <label>
+              Relação com o avaliado:
+              <input
+                value={relacao}
+                onChange={(e) => setRelacao(e.target.value)}
+                placeholder="Ex: Mãe, professor, responsável legal..."
+                required
+              />
             </label>
-          </>
+          </div>
         )}
 
-        <button type="submit">
+        <button type="submit" style={{ marginTop: "1em" }}>
           Iniciar Teste →
         </button>
       </form>

@@ -10,20 +10,21 @@ Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de 
 - TypeScript
 - Tailwind CSS
 - ESLint
-- Zustand (em breve)
+- Zustand
 - EmailJS / Nodemailer (em breve)
 
 ---
 
-## Estrutura de Páginas (v0.2.0)
+## Estrutura de Páginas (v0.7.2)
 
-| Rota         | Descrição                        |
-|--------------|----------------------------------|
-| `/`          | Tela de boas-vindas              |
-| `/cadastro`  | Formulário de identificação      |
-| `/teste`     | Perguntas indicativas (mock)     |
-| `/resultado` | Exibição do percentual estimado  |
-| `/fim`       | Agradecimento e CTA final        |
+| Rota         | Descrição                            |
+|--------------|--------------------------------------|
+| `/`          | Tela de boas-vindas                  |
+| `/cadastro`  | Formulário de identificação          |
+| `/instrucoes`| Explicação do teste e boas práticas  |
+| `/teste`     | Perguntas adaptadas com timer        |
+| `/resultado` | Resultado parcial com feedback       |
+| `/fim`       | Agradecimento e chamada para ação    |
 
 > ⚠️ Navegação direta entre páginas só está habilitada em modo de desenvolvimento (`NODE_ENV=development`).
 
@@ -48,7 +49,7 @@ http://localhost:3000
 
 ## Versão Atual
 
-- **v0.6.0** – Sorteio balanceado de perguntas por categoria e faixa etária com uso de Zustand
+- **v0.7.2** – Reformulação visual do cadastro e tela inicial com mais credibilidade e acessibilidade
 
 ---
 
@@ -56,6 +57,8 @@ http://localhost:3000
 
 | Versão   | Data       | Descrição                                                                 |
 |----------|------------|---------------------------------------------------------------------------|
+| v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados) |
+| v0.7.0   | 2025-05-04 | Tela de instruções antes do teste                                          |
 | v0.6.0   | 2025-05-04 | Sorteio inteligente de 20 perguntas (5 por categoria) com base clínica     |
 | v0.5.0   | 2025-05-04 | Integração do banco TEA completo com 60 perguntas categorizadas ADOS/ADI-R |
 | v0.4.0   | 2025-05-04 | Teste interativo com timer, validação, bloqueio de resposta e Zustand     |
