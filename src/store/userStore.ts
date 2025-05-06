@@ -31,6 +31,8 @@ type EstadoGlobal = {
   respondente: {
     nome: string;
     email: string;
+    celular: string;
+    ehWhatsapp: boolean;
     cidade: string;
     nascimento: string;
     paraOutraPessoa: boolean;
@@ -49,6 +51,8 @@ export const useUserStore = create<EstadoGlobal>((set) => ({
   respondente: {
     nome: "",
     email: "",
+    celular: "",
+    ehWhatsapp: false,
     cidade: "",
     nascimento: "",
     paraOutraPessoa: false,
@@ -66,6 +70,8 @@ export const useUserStore = create<EstadoGlobal>((set) => ({
       respondente: {
         nome: "",
         email: "",
+        celular: "",
+        ehWhatsapp: false,
         cidade: "",
         nascimento: "",
         paraOutraPessoa: false,
