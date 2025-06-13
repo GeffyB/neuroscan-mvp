@@ -49,7 +49,7 @@ http://localhost:3000
 
 ## Versão Atual
 
-- **v0.7.2** – Reformulação visual do cadastro e tela inicial com mais credibilidade e acessibilidade
+- **v0.8.0** – RRefinamento visual completo para todas as páginas, unificando a identidade visual, responsividade, acessibilidade e usabilidade para apresentação
 
 ---
 
@@ -57,6 +57,7 @@ http://localhost:3000
 
 | Versão   | Data       | Descrição                                                                 |
 |----------|------------|---------------------------------------------------------------------------|
+| v0.8.0   | 2025-06-12 | | v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados) |
 | v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados) |
 | v0.7.0   | 2025-05-04 | Tela de instruções antes do teste                                          |
 | v0.6.0   | 2025-05-04 | Sorteio inteligente de 20 perguntas (5 por categoria) com base clínica     |

@@ -11,12 +11,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <body>
         {estamosNaBaguncaDoDev && (
-          <nav style={{ padding: "10px", borderBottom: "2px dashed #999" }}>
-            <a href="/">🏠 Início</a> |{" "}
-            <a href="/cadastro">📝 Cadastro</a> |{" "}
-            <a href="/teste">🧠 Teste</a> |{" "}
-            <a href="/resultado">📊 Resultado</a> |{" "}
-            <a href="/fim">🚪 Fim</a>
+          <nav
+            style={{
+              padding: "10px",
+              borderBottom: "2px dashed #999",
+              textAlign: "center",
+              fontSize: "0.95rem",
+            }}
+          >
+            <a href="/" style={{ margin: "0 0.5em" }}>🏠 Início</a>|
+            <a href="/cadastro" style={{ margin: "0 0.5em" }}>📝 Cadastro</a>|
+            <a href="/teste" style={{ margin: "0 0.5em" }}>🧠 Teste</a>|
+            <a href="/resultado" style={{ margin: "0 0.5em" }}>📊 Resultado</a>|
+            <a href="/fim" style={{ margin: "0 0.5em" }}>🚪 Fim</a>
           </nav>
         )}
 

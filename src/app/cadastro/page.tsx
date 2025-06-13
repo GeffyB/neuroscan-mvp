@@ -67,17 +67,19 @@ export default function Cadastro() {
   };
 
   return (
-    <div style={{ maxWidth: 700, margin: "0 auto" }}>
-      <h1>📝 Cadastro</h1>
+    <div style={{ maxWidth: 700, margin: "0 auto", padding: "2em 1em", fontFamily: "'Inter', sans-serif", color: "#1f2937" }}>
+      <h1 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1em", display: "flex", alignItems: "center", gap: "0.5em" }}>
+        📝 Cadastro
+      </h1>
 
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25em" }}>
         <label>
           Nome completo:
           <input
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             placeholder="Digite aqui seu nome completo..."
-            style={{ width: "100%" }}
+            style={{ width: "100%", padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
             required
           />
         </label>
@@ -89,6 +91,7 @@ export default function Cadastro() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="seuemail@provedor.com"
+            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
             required
           />
         </label>
@@ -102,7 +105,7 @@ export default function Cadastro() {
               onChange={(e) => setDDD(e.target.value.replace(/\D/g, ""))}
               placeholder="DDD"
               maxLength={2}
-              style={{ width: "80px" }}
+              style={{ width: "80px", padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
               required
             />
             <input
@@ -110,6 +113,7 @@ export default function Cadastro() {
               value={telefone}
               onChange={(e) => setTelefone(e.target.value.replace(/\D/g, ""))}
               placeholder="999999999"
+              style={{ flex: 1, padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
               required
             />
           </div>
@@ -143,13 +147,19 @@ export default function Cadastro() {
             type="date"
             value={nascimento}
             onChange={(e) => setNascimento(e.target.value)}
+            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
             required
           />
         </label>
 
         <label>
           Estado (UF):
-          <select value={estadoUF} onChange={(e) => setEstadoUF(e.target.value)} required>
+          <select
+            value={estadoUF}
+            onChange={(e) => setEstadoUF(e.target.value)}
+            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            required
+          >
             <option value="">Selecione um estado</option>
             {estadosCidades.map((estado) => (
               <option key={estado.sigla} value={estado.sigla}>
@@ -164,8 +174,9 @@ export default function Cadastro() {
           <select
             value={cidadeSelecionada}
             onChange={(e) => setCidadeSelecionada(e.target.value)}
-            required
             disabled={!estadoUF}
+            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            required
           >
             <option value="">Selecione uma cidade</option>
             {cidadesDoEstado.map((cidade) => (
@@ -188,13 +199,14 @@ export default function Cadastro() {
         </div>
 
         {!meRespondo && (
-          <div style={{ marginTop: "1em", display: "flex", flexDirection: "column", gap: "1em" }}>
+          <div style={{ marginTop: "1em", display: "flex", flexDirection: "column", gap: "1em", background: "#f9f9f9", padding: "1em", borderRadius: "0.75em" }}>
             <label>
               Nome do avaliado:
               <input
                 value={nomeAvaliado}
                 onChange={(e) => setNomeAvaliado(e.target.value)}
                 placeholder="Nome completo da pessoa avaliada"
+                style={{ width: "100%", padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
                 required
               />
             </label>
@@ -207,6 +219,7 @@ export default function Cadastro() {
                 value={idadeAvaliado}
                 onChange={(e) => setIdadeAvaliado(e.target.value)}
                 placeholder="Ex: 14"
+                style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
                 required
               />
             </label>
@@ -217,13 +230,26 @@ export default function Cadastro() {
                 value={relacao}
                 onChange={(e) => setRelacao(e.target.value)}
                 placeholder="Ex: Mãe, professor, responsável legal..."
+                style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
                 required
               />
             </label>
           </div>
         )}
 
-        <button type="submit" style={{ marginTop: "1em" }}>
+        <button
+          type="submit"
+          style={{
+            marginTop: "2em",
+            padding: "0.75em 1.5em",
+            backgroundColor: "#2563eb",
+            color: "#fff",
+            border: "none",
+            borderRadius: "0.75em",
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
           Iniciar Teste →
         </button>
       </form>

@@ -24,7 +24,6 @@ export default function Teste() {
   const [respostaSelecionada, setRespostaSelecionada] = useState<number | null>(null);
   const [podeAvancar, setPodeAvancar] = useState(false);
 
-  // 🔀 Função de sorteio balanceado
   function sortearPerguntas() {
     const idade = avaliado?.idade || 18;
     const faixa = idade < 13 ? "crianca" : idade < 18 ? "adolescente" : "adulto";
@@ -43,7 +42,6 @@ export default function Teste() {
     return selecionadas.sort(() => Math.random() - 0.5);
   }
 
-  // 🔁 Ao carregar a página, sorteia se necessário
   useEffect(() => {
     if (!perguntasSorteadas.length) {
       const sorteadas = sortearPerguntas();
@@ -54,7 +52,6 @@ export default function Teste() {
   const perguntas = perguntasSorteadas;
   const perguntaAtual = perguntas[indiceAtual];
 
-  // ⏱️ Timer reiniciado a cada pergunta
   useEffect(() => {
     if (!perguntaAtual) return;
     setTempoRestante(perguntaAtual.tempo_limite);
@@ -90,35 +87,66 @@ export default function Teste() {
   if (!perguntaAtual) return <p>🔃 Carregando teste...</p>;
 
   return (
-    <div>
-      <h1>🧠 Teste NeuroScan</h1>
+    <div
+      style={{
+        maxWidth: 700,
+        margin: "0 auto",
+        padding: "2em 1em",
+        fontFamily: "'Inter', sans-serif",
+        color: "#1f2937",
+      }}
+    >
+      <h1 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1em", display: "flex", alignItems: "center", gap: "0.5em" }}>
+        🧠 Teste NeuroScan
+      </h1>
 
-      <p><strong>{indiceAtual + 1} / {perguntas.length}</strong></p>
-      <p>⏱️ Tempo restante: {tempoRestante}s</p>
+      <p style={{ marginBottom: "0.5em" }}><strong>{indiceAtual + 1} / {perguntas.length}</strong></p>
+      <p style={{ marginBottom: "1em" }}>⏱️ Tempo restante: {tempoRestante}s</p>
 
-      <h2>{perguntaAtual.texto}</h2>
+      <h2 style={{ fontSize: "1.25rem", marginBottom: "1em" }}>{perguntaAtual.texto}</h2>
 
-      {perguntaAtual.respostas.map((resposta, index) => (
-        <label key={index} style={{ display: "block", marginTop: "0.5em" }}>
-          <input
-            type="radio"
-            name="resposta"
-            value={resposta.valor}
-            checked={respostaSelecionada === resposta.valor}
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.75em", marginTop: "1em" }}>
+        {perguntaAtual.respostas.map((resposta, index) => (
+          <button
+            key={index}
             disabled={tempoRestante === 0}
-            onChange={() => {
+            onClick={() => {
               setRespostaSelecionada(resposta.valor);
               setPodeAvancar(true);
             }}
-          />
-          {resposta.texto}
-        </label>
-      ))}
+            style={{
+              textAlign: "left",
+              width: "100%",
+              padding: "0.75em 1em",
+              borderRadius: "0.75em",
+              border: "1px solid #3B82F6",
+              backgroundColor: respostaSelecionada === resposta.valor ? "#2563EB" : "#DBEAFE",
+              color: respostaSelecionada === resposta.valor ? "#fff" : "#1E40AF",
+              fontWeight: 500,
+              cursor: "pointer",
+              transition: "background-color 0.2s",
+            }}
+          >
+            {resposta.texto}
+          </button>
+        ))}
+      </div>
 
       <button
         onClick={handleAvancar}
         disabled={!podeAvancar}
-        style={{ marginTop: "1em" }}
+        style={{
+          marginTop: "2em",
+          padding: "0.75em 1.5em",
+          backgroundColor: "#7C3AED",
+          color: "#fff",
+          border: "none",
+          borderRadius: "0.75em",
+          fontWeight: 600,
+          cursor: podeAvancar ? "pointer" : "not-allowed",
+          opacity: podeAvancar ? 1 : 0.5,
+          transition: "background-color 0.2s",
+        }}
       >
         {indiceAtual + 1 === perguntas.length ? "Finalizar Teste" : "Próxima →"}
       </button>
