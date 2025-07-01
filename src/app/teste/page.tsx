@@ -17,12 +17,30 @@ export default function Teste() {
     perguntasSorteadas,
     setPerguntasSorteadas,
     adicionarResposta,
+    // resetAll, // REMOVIDO porque não existe no store (ainda!)
   } = useUserStore();
 
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [tempoRestante, setTempoRestante] = useState(0);
   const [respostaSelecionada, setRespostaSelecionada] = useState<number | null>(null);
   const [podeAvancar, setPodeAvancar] = useState(false);
+
+  // === Bloco Anti-cheat/Back/Refresh ==========
+  useEffect(() => {
+    // Nome maroto pro nosso token
+    const neuroTokenMaluquinho = localStorage.getItem("neuroTokenMaluquinho");
+    if (!neuroTokenMaluquinho) {
+      // Aqui seria a limpeza de dados, mas por enquanto não precisa!
+      // Sinaliza para o cadastro o motivo
+      localStorage.setItem("neuroAlerta", "⚠️ Você tentou voltar ou recarregar a página durante o teste. Para garantir resultados confiáveis, é necessário reiniciar o cadastro e começar do zero.");
+      router.replace("/cadastro");
+    }
+    // Remove o alerta assim que acessa o teste normalmente
+    return () => {
+      localStorage.removeItem("neuroAlerta");
+    };
+  }, []);
+  // ============================================
 
   function sortearPerguntas() {
     const idade = avaliado?.idade || 18;
@@ -80,6 +98,8 @@ export default function Teste() {
     if (indiceAtual + 1 < perguntas.length) {
       setIndiceAtual(indiceAtual + 1);
     } else {
+      // Teste finalizado, pode remover o token
+      localStorage.removeItem("neuroTokenMaluquinho");
       router.push("/resultado");
     }
   };

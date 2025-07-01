@@ -1,18 +1,60 @@
 // ===============================================
 // 📄 ARQUIVO: src/app/cadastro/page.tsx
-// 🎯 OBJETIVO: Coletar dados do respondente e avaliado com campos melhor formatados
+// 🎯 OBJETIVO: Coletar dados do respondente e avaliado com campos melhor formatados e validados
 // ===============================================
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/store/userStore";
 import estadosCidades from "@/data/estados-cidades.json";
 
+// Função marota para validar nome completo
+function nomeEhCompleto(nome: string) {
+  const partes = nome.trim().split(/\s+/);
+  return partes.length >= 2 && partes.every((p) => p.length >= 3);
+}
+
+// Regex brava pra email
+function emailValido(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// DDD e telefone: só números, tamanhos mínimos
+function dddValido(ddd: string) {
+  return /^\d{2}$/.test(ddd);
+}
+function telefoneValido(tel: string) {
+  return /^\d{8,9}$/.test(tel); // 8 ou 9 dígitos para Brasilzão
+}
+
+// Data BR em formato dd/mm/yyyy
+function dataBRValida(dateStr: string) {
+  // Ajusta para yyyy-mm-dd se vier do input tipo date (ISO)
+  let [ano, mes, dia] = ["", "", ""];
+  if (dateStr.includes("-")) {
+    [ano, mes, dia] = dateStr.split("-");
+  } else if (dateStr.includes("/")) {
+    [dia, mes, ano] = dateStr.split("/");
+  } else {
+    return false;
+  }
+  const data = new Date(+ano, +mes - 1, +dia);
+  const hoje = new Date();
+  const minAno = hoje.getFullYear() - 120; // Limite: não mais que 120 anos atrás
+  if (data > hoje) return false; // não pode ser do futuro
+  if (+ano < minAno) return false;
+  // Se der erro de data, não aceita
+  return data.getFullYear() == +ano && (data.getMonth() + 1) == +mes && data.getDate() == +dia;
+}
+
 export default function Cadastro() {
   const router = useRouter();
   const { setRespondente, setAvaliado } = useUserStore();
+
+  // State para alerta vindo do anti-cheat do teste
+  const [alertaDoChefinho, setAlertaDoChefinho] = useState<string | null>(null);
 
   const [meRespondo, setMeRespondo] = useState(true);
   const [nome, setNome] = useState("");
@@ -30,11 +72,51 @@ export default function Cadastro() {
   const [idadeAvaliado, setIdadeAvaliado] = useState("");
   const [relacao, setRelacao] = useState("");
 
+  // Ao montar, verifica se tem alerta vindo do anti-cheat
+  useEffect(() => {
+    const alerta = localStorage.getItem("neuroAlerta");
+    if (alerta) {
+      setAlertaDoChefinho(alerta);
+      localStorage.removeItem("neuroAlerta");
+    }
+    // Sempre apaga o token maroto de sessão do teste (começa tudo de novo)
+    localStorage.removeItem("neuroTokenMaluquinho");
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nome || !email || !ddd || !telefone || ehWhatsapp === null || !nascimento || !estadoUF || !cidadeSelecionada) {
-      alert("Preencha todos os campos obrigatórios.");
+    // Validações robustas
+    if (!nomeEhCompleto(nome)) {
+      alert("Nome deve ser completo (mínimo 2 palavras, cada uma com pelo menos 3 letras)");
+      return;
+    }
+    if (!emailValido(email)) {
+      alert("E-mail inválido. Digite um endereço válido!");
+      return;
+    }
+    if (!dddValido(ddd)) {
+      alert("DDD inválido. Use 2 dígitos (ex: 11)");
+      return;
+    }
+    if (!telefoneValido(telefone)) {
+      alert("Número de celular inválido. Use 8 ou 9 dígitos (apenas números).");
+      return;
+    }
+    if (ehWhatsapp === null) {
+      alert("Informe se é WhatsApp!");
+      return;
+    }
+    if (!nascimento || !dataBRValida(nascimento)) {
+      alert("Data de nascimento inválida ou no formato errado.");
+      return;
+    }
+    if (!estadoUF) {
+      alert("Selecione o estado.");
+      return;
+    }
+    if (!cidadeSelecionada) {
+      alert("Selecione a cidade.");
       return;
     }
 
@@ -51,17 +133,29 @@ export default function Cadastro() {
     });
 
     if (!meRespondo) {
-      if (!nomeAvaliado || !idadeAvaliado || !relacao) {
-        alert("Preencha os dados do avaliado.");
+      if (!nomeEhCompleto(nomeAvaliado)) {
+        alert("Nome do avaliado deve ser completo (mínimo 2 palavras, cada uma com pelo menos 3 letras)");
+        return;
+      }
+      const idadeNum = parseInt(idadeAvaliado, 10);
+      if (!idadeNum || idadeNum < 1 || idadeNum > 120) {
+        alert("Idade do avaliado inválida.");
+        return;
+      }
+      if (!relacao.trim()) {
+        alert("Informe a relação com o avaliado.");
         return;
       }
 
       setAvaliado({
         nome: nomeAvaliado,
-        idade: parseInt(idadeAvaliado),
+        idade: idadeNum,
         relacao,
       });
     }
+
+    // Cria o token maroto de sessão do teste para bloquear "cheats"
+    localStorage.setItem("neuroTokenMaluquinho", Date.now().toString());
 
     router.push("/instrucoes");
   };
@@ -71,6 +165,13 @@ export default function Cadastro() {
       <h1 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1em", display: "flex", alignItems: "center", gap: "0.5em" }}>
         📝 Cadastro
       </h1>
+
+      {/* Mensagem de alerta marota, caso tenha sido redirecionado do teste */}
+      {alertaDoChefinho && (
+        <div style={{ background: "#fbbf24", color: "#78350f", padding: "1em", borderRadius: "0.75em", marginBottom: "1em", fontWeight: 600 }}>
+          {alertaDoChefinho}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25em" }}>
         <label>
@@ -150,6 +251,8 @@ export default function Cadastro() {
             style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
             required
           />
+          {/* Exibe instrução para formato BR */}
+          <span style={{ color: "#888", fontSize: "0.9em" }}>Formato: dd/mm/aaaa</span>
         </label>
 
         <label>

@@ -1,3 +1,4 @@
+
 # NeuroScan – MVP de Triagem Digital para Neurodivergências
 
 Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de condições como **TEA**, **TDAH**, **TOD** e **Altas Habilidades**. O objetivo é fornecer uma triagem inicial (não diagnóstica), coletar leads qualificados e encaminhar para avaliação profissional.
@@ -6,7 +7,7 @@ Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de 
 
 ## Tecnologias Utilizadas
 
-- [Next.js](https://nextjs.org/) (App Router)
+- Next.js (App Router)
 - TypeScript
 - Tailwind CSS
 - ESLint
@@ -15,7 +16,7 @@ Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de 
 
 ---
 
-## Estrutura de Páginas (v0.7.2)
+## Estrutura de Páginas
 
 | Rota         | Descrição                            |
 |--------------|--------------------------------------|
@@ -39,17 +40,14 @@ npm install
 npm run dev
 ```
 
-Depois, acesse no navegador:
-
-```
-http://localhost:3000
-```
+Depois, acesse no navegador:  
+[http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## Versão Atual
 
-- **v0.8.0** – RRefinamento visual completo para todas as páginas, unificando a identidade visual, responsividade, acessibilidade e usabilidade para apresentação
+- **v0.8.1** – Controle de fluxo anti-cheat/back/refresh no teste, validação robusta de cadastro (nome, email, telefone, data e campos obrigatórios), prontidão para integração de persistência de dados.
 
 ---
 
@@ -57,16 +55,26 @@ http://localhost:3000
 
 | Versão   | Data       | Descrição                                                                 |
 |----------|------------|---------------------------------------------------------------------------|
-| v0.8.0   | 2025-06-12 | | v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados) |
-| v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados) |
-| v0.7.0   | 2025-05-04 | Tela de instruções antes do teste                                          |
-| v0.6.0   | 2025-05-04 | Sorteio inteligente de 20 perguntas (5 por categoria) com base clínica     |
-| v0.5.0   | 2025-05-04 | Integração do banco TEA completo com 60 perguntas categorizadas ADOS/ADI-R |
+| v0.8.1   | 2025-07-01 | Controle anti-cheat/back/refresh e validação reforçada no cadastro        |
+| v0.8.0   | 2025-06-12 | Refinamento visual, responsividade e unificação da identidade visual      |
+| v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados)|
+| v0.7.0   | 2025-05-04 | Tela de instruções antes do teste                                         |
+| v0.6.0   | 2025-05-04 | Sorteio inteligente de 20 perguntas (5 por categoria) com base clínica    |
+| v0.5.0   | 2025-05-04 | Integração do banco TEA completo com 60 perguntas categorizadas ADOS/ADI-R|
 | v0.4.0   | 2025-05-04 | Teste interativo com timer, validação, bloqueio de resposta e Zustand     |
 | v0.3.2   | 2025-05-03 | Cadastro com seleção de Estado + Cidade usando base oficial completa      |
 | v0.3.0   | 2025-05-03 | Formulário de cadastro com fluxo condicional (respondente e avaliado)     |
-| v0.2.0   | 2025-05-01 | Estrutura de páginas e navegação base                                     |
-| v0.1.0   | 2025-04-30 | Setup inicial do projeto com Next.js, TypeScript e Tailwind               |
+| v0.2.0   | 2025-05-01 | Estrutura de páginas e navegação base                                    |
+| v0.1.0   | 2025-04-30 | Setup inicial do projeto com Next.js, TypeScript e Tailwind              |
+
+---
+
+## Novidades da v0.8.1
+
+- Controle de fluxo: Usuários que tentam voltar/recarregar a página durante o teste são redirecionados para o cadastro e precisam recomeçar.
+- Validações robustas em todos os campos do cadastro, evitando dados inválidos.
+- Pronto para futura integração com backend de persistência (ex: Firebase).
+- Manutenção facilitada e código mais seguro para coleta de feedback real.
 
 ---
 
