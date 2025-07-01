@@ -1,6 +1,5 @@
 // ===============================================
-// 📄 ARQUIVO: src/app/cadastro/page.tsx
-// 🎯 OBJETIVO: Coletar dados do respondente e avaliado com campos melhor formatados e validados
+// 📄 ARQUIVO: src/app/cadastro/page.tsx (refinado)
 // ===============================================
 
 "use client";
@@ -10,13 +9,13 @@ import { useRouter } from "next/navigation";
 import { useUserStore } from "@/store/userStore";
 import estadosCidades from "@/data/estados-cidades.json";
 
-// Função marota para validar nome completo
+// Função para validar nome completo
 function nomeEhCompleto(nome: string) {
   const partes = nome.trim().split(/\s+/);
   return partes.length >= 2 && partes.every((p) => p.length >= 3);
 }
 
-// Regex brava pra email
+// Regex para email
 function emailValido(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -26,12 +25,11 @@ function dddValido(ddd: string) {
   return /^\d{2}$/.test(ddd);
 }
 function telefoneValido(tel: string) {
-  return /^\d{8,9}$/.test(tel); // 8 ou 9 dígitos para Brasilzão
+  return /^\d{8,9}$/.test(tel); // 8 ou 9 dígitos
 }
 
 // Data BR em formato dd/mm/yyyy
 function dataBRValida(dateStr: string) {
-  // Ajusta para yyyy-mm-dd se vier do input tipo date (ISO)
   let [ano, mes, dia] = ["", "", ""];
   if (dateStr.includes("-")) {
     [ano, mes, dia] = dateStr.split("-");
@@ -42,10 +40,9 @@ function dataBRValida(dateStr: string) {
   }
   const data = new Date(+ano, +mes - 1, +dia);
   const hoje = new Date();
-  const minAno = hoje.getFullYear() - 120; // Limite: não mais que 120 anos atrás
-  if (data > hoje) return false; // não pode ser do futuro
+  const minAno = hoje.getFullYear() - 120;
+  if (data > hoje) return false;
   if (+ano < minAno) return false;
-  // Se der erro de data, não aceita
   return data.getFullYear() == +ano && (data.getMonth() + 1) == +mes && data.getDate() == +dia;
 }
 
@@ -53,7 +50,6 @@ export default function Cadastro() {
   const router = useRouter();
   const { setRespondente, setAvaliado } = useUserStore();
 
-  // State para alerta vindo do anti-cheat do teste
   const [alertaDoChefinho, setAlertaDoChefinho] = useState<string | null>(null);
 
   const [meRespondo, setMeRespondo] = useState(true);
@@ -72,21 +68,30 @@ export default function Cadastro() {
   const [idadeAvaliado, setIdadeAvaliado] = useState("");
   const [relacao, setRelacao] = useState("");
 
-  // Ao montar, verifica se tem alerta vindo do anti-cheat
   useEffect(() => {
     const alerta = localStorage.getItem("neuroAlerta");
     if (alerta) {
       setAlertaDoChefinho(alerta);
       localStorage.removeItem("neuroAlerta");
     }
-    // Sempre apaga o token maroto de sessão do teste (começa tudo de novo)
     localStorage.removeItem("neuroTokenMaluquinho");
   }, []);
+
+  // BLOQUEIA ENTRADA DE DDD PARA APENAS 2 DÍGITOS NUMÉRICOS
+  const handleDDD = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "");
+    setDDD(value.slice(0, 2));
+  };
+
+  // BLOQUEIA TELEFONE PARA 8 OU 9 DÍGITOS NUMÉRICOS
+  const handleTelefone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "");
+    if (value.length <= 9) setTelefone(value);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validações robustas
     if (!nomeEhCompleto(nome)) {
       alert("Nome deve ser completo (mínimo 2 palavras, cada uma com pelo menos 3 letras)");
       return;
@@ -154,21 +159,46 @@ export default function Cadastro() {
       });
     }
 
-    // Cria o token maroto de sessão do teste para bloquear "cheats"
     localStorage.setItem("neuroTokenMaluquinho", Date.now().toString());
-
     router.push("/instrucoes");
   };
 
+  // ============ ESTILOS PARA NOVA PALETA PROFISSIONAL ============
+  const corFundo = "#F6F9FB"; // suave azulada
+  const corPrimaria = "#2563eb";
+  const corSecundaria = "#1e293b";
+  const corBorda = "#cbd5e1";
+
   return (
-    <div style={{ maxWidth: 700, margin: "0 auto", padding: "2em 1em", fontFamily: "'Inter', sans-serif", color: "#1f2937" }}>
-      <h1 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1em", display: "flex", alignItems: "center", gap: "0.5em" }}>
-        📝 Cadastro
+    <div style={{
+      maxWidth: 700,
+      minHeight: "100vh",
+      margin: "0 auto",
+      padding: "2em 1em",
+      background: corFundo,
+      fontFamily: "'Inter', sans-serif",
+      color: corSecundaria,
+      boxShadow: "0 0 32px #e0e7ef40"
+    }}>
+      <h1 style={{
+        fontSize: "2rem",
+        fontWeight: 700,
+        marginBottom: "1em",
+        letterSpacing: "-0.02em"
+      }}>
+        Cadastro NeuroScan
       </h1>
 
-      {/* Mensagem de alerta marota, caso tenha sido redirecionado do teste */}
       {alertaDoChefinho && (
-        <div style={{ background: "#fbbf24", color: "#78350f", padding: "1em", borderRadius: "0.75em", marginBottom: "1em", fontWeight: 600 }}>
+        <div style={{
+          background: "#fff8e1",
+          color: "#ad8500",
+          padding: "1em",
+          borderRadius: "0.75em",
+          marginBottom: "1em",
+          fontWeight: 500,
+          border: `1.5px solid #ffe066`
+        }}>
           {alertaDoChefinho}
         </div>
       )}
@@ -179,8 +209,14 @@ export default function Cadastro() {
           <input
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            placeholder="Digite aqui seu nome completo..."
-            style={{ width: "100%", padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            placeholder="Digite seu nome completo"
+            style={{
+              width: "100%",
+              padding: "0.5em",
+              borderRadius: "0.5em",
+              border: `1px solid ${corBorda}`,
+              background: "#fff"
+            }}
             required
           />
         </label>
@@ -192,7 +228,12 @@ export default function Cadastro() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="seuemail@provedor.com"
-            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            style={{
+              padding: "0.5em",
+              borderRadius: "0.5em",
+              border: `1px solid ${corBorda}`,
+              background: "#fff"
+            }}
             required
           />
         </label>
@@ -203,26 +244,42 @@ export default function Cadastro() {
             <input
               type="text"
               value={ddd}
-              onChange={(e) => setDDD(e.target.value.replace(/\D/g, ""))}
+              onChange={handleDDD}
               placeholder="DDD"
               maxLength={2}
-              style={{ width: "80px", padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+              style={{
+                width: "80px",
+                padding: "0.5em",
+                borderRadius: "0.5em",
+                border: `1px solid ${corBorda}`,
+                background: "#fff"
+              }}
               required
+              inputMode="numeric"
             />
             <input
               type="text"
               value={telefone}
-              onChange={(e) => setTelefone(e.target.value.replace(/\D/g, ""))}
-              placeholder="999999999"
-              style={{ flex: 1, padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+              onChange={handleTelefone}
+              placeholder="Número (8 ou 9 dígitos)"
+              minLength={8}
+              maxLength={9}
+              style={{
+                flex: 1,
+                padding: "0.5em",
+                borderRadius: "0.5em",
+                border: `1px solid ${corBorda}`,
+                background: "#fff"
+              }}
               required
+              inputMode="numeric"
             />
           </div>
         </label>
 
         <div>
-          <p>É WhatsApp:</p>
-          <label>
+          <p style={{ margin: "0.3em 0 0.5em 0" }}>É WhatsApp:</p>
+          <label style={{ marginRight: "1.5em" }}>
             <input
               type="radio"
               name="ehWhatsapp"
@@ -231,7 +288,7 @@ export default function Cadastro() {
             />{" "}
             Sim
           </label>
-          <label style={{ marginLeft: "1em" }}>
+          <label>
             <input
               type="radio"
               name="ehWhatsapp"
@@ -248,10 +305,14 @@ export default function Cadastro() {
             type="date"
             value={nascimento}
             onChange={(e) => setNascimento(e.target.value)}
-            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            style={{
+              padding: "0.5em",
+              borderRadius: "0.5em",
+              border: `1px solid ${corBorda}`,
+              background: "#fff"
+            }}
             required
           />
-          {/* Exibe instrução para formato BR */}
           <span style={{ color: "#888", fontSize: "0.9em" }}>Formato: dd/mm/aaaa</span>
         </label>
 
@@ -260,7 +321,12 @@ export default function Cadastro() {
           <select
             value={estadoUF}
             onChange={(e) => setEstadoUF(e.target.value)}
-            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            style={{
+              padding: "0.5em",
+              borderRadius: "0.5em",
+              border: `1px solid ${corBorda}`,
+              background: "#fff"
+            }}
             required
           >
             <option value="">Selecione um estado</option>
@@ -278,7 +344,12 @@ export default function Cadastro() {
             value={cidadeSelecionada}
             onChange={(e) => setCidadeSelecionada(e.target.value)}
             disabled={!estadoUF}
-            style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+            style={{
+              padding: "0.5em",
+              borderRadius: "0.5em",
+              border: `1px solid ${corBorda}`,
+              background: "#fff"
+            }}
             required
           >
             <option value="">Selecione uma cidade</option>
@@ -293,23 +364,37 @@ export default function Cadastro() {
         <div style={{ marginTop: "1em" }}>
           <label>Você está fazendo o teste:</label>
           <br />
-          <label>
+          <label style={{ marginRight: "1.5em" }}>
             <input type="radio" checked={meRespondo} onChange={() => setMeRespondo(true)} /> Para você
           </label>
-          <label style={{ marginLeft: "1em" }}>
+          <label>
             <input type="radio" checked={!meRespondo} onChange={() => setMeRespondo(false)} /> Para outra pessoa
           </label>
         </div>
 
         {!meRespondo && (
-          <div style={{ marginTop: "1em", display: "flex", flexDirection: "column", gap: "1em", background: "#f9f9f9", padding: "1em", borderRadius: "0.75em" }}>
+          <div style={{
+            marginTop: "1em",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1em",
+            background: "#f4f7fb",
+            padding: "1em",
+            borderRadius: "0.75em"
+          }}>
             <label>
               Nome do avaliado:
               <input
                 value={nomeAvaliado}
                 onChange={(e) => setNomeAvaliado(e.target.value)}
                 placeholder="Nome completo da pessoa avaliada"
-                style={{ width: "100%", padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+                style={{
+                  width: "100%",
+                  padding: "0.5em",
+                  borderRadius: "0.5em",
+                  border: `1px solid ${corBorda}`,
+                  background: "#fff"
+                }}
                 required
               />
             </label>
@@ -322,7 +407,12 @@ export default function Cadastro() {
                 value={idadeAvaliado}
                 onChange={(e) => setIdadeAvaliado(e.target.value)}
                 placeholder="Ex: 14"
-                style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+                style={{
+                  padding: "0.5em",
+                  borderRadius: "0.5em",
+                  border: `1px solid ${corBorda}`,
+                  background: "#fff"
+                }}
                 required
               />
             </label>
@@ -333,7 +423,12 @@ export default function Cadastro() {
                 value={relacao}
                 onChange={(e) => setRelacao(e.target.value)}
                 placeholder="Ex: Mãe, professor, responsável legal..."
-                style={{ padding: "0.5em", borderRadius: "0.5em", border: "1px solid #ccc" }}
+                style={{
+                  padding: "0.5em",
+                  borderRadius: "0.5em",
+                  border: `1px solid ${corBorda}`,
+                  background: "#fff"
+                }}
                 required
               />
             </label>
@@ -345,15 +440,18 @@ export default function Cadastro() {
           style={{
             marginTop: "2em",
             padding: "0.75em 1.5em",
-            backgroundColor: "#2563eb",
+            backgroundColor: corPrimaria,
             color: "#fff",
             border: "none",
             borderRadius: "0.75em",
             fontWeight: 600,
+            fontSize: "1.05em",
+            boxShadow: "0 2px 12px #2563eb30",
             cursor: "pointer",
+            letterSpacing: "0.02em"
           }}
         >
-          Iniciar Teste →
+          Iniciar Teste
         </button>
       </form>
     </div>

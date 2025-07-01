@@ -1,6 +1,5 @@
 // ===============================================
-// 📄 ARQUIVO: src/app/instrucoes/page.tsx
-// 🎯 OBJETIVO: Instruções antes do início do teste
+// 📄 ARQUIVO: src/app/instrucoes/page.tsx (refinado)
 // ===============================================
 
 "use client";
@@ -14,58 +13,102 @@ export default function Instrucoes() {
     router.push("/teste");
   };
 
-  return (
-    <div style={{ padding: "2em", maxWidth: 700, margin: "0 auto" }}>
-      <h1>📘 Instruções do Teste</h1>
+  // Paleta visual alinhada ao restante do app
+  const corFundo = "#F6F9FB";
+  const corPrimaria = "#2563eb";
+  const corSecundaria = "#1e293b";
+  const corBorda = "#cbd5e1";
+  const corDestaque = "#e0e7ef";
 
-      <p>
-        Este teste é uma <strong>triagem indicativa</strong> para auxiliar na identificação de comportamentos associados a condições como o <strong>Transtorno do Espectro Autista (TEA)</strong>.
+  return (
+    <div
+      style={{
+        background: corFundo,
+        maxWidth: 700,
+        minHeight: "100vh",
+        margin: "0 auto",
+        padding: "2.5em 1.5em",
+        fontFamily: "'Inter', sans-serif",
+        color: corSecundaria,
+        boxShadow: "0 0 32px #e0e7ef40"
+      }}
+    >
+      <h1 style={{ fontSize: "2rem", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "1em" }}>
+        Instruções para o Teste
+      </h1>
+
+      <p style={{ fontSize: "1.07rem", marginBottom: "1.2em", lineHeight: 1.6 }}>
+        Este teste digital tem como objetivo auxiliar na triagem inicial de possíveis sinais de neurodivergências, baseando-se em protocolos clínicos reconhecidos. Leia com atenção antes de iniciar:
       </p>
 
-      <ul style={{ marginTop: "1em", marginBottom: "1em" }}>
-        <li>🕒 Duração estimada: cerca de 10 a 15 minutos.</li>
-        <li>📵 Escolha um ambiente calmo, sem interrupções ou distrações.</li>
-        <li>⏱️ Cada pergunta possui um limite de tempo. Após o tempo acabar, não será possível marcar uma resposta.</li>
-        <li>🧠 Tente responder com sinceridade e foco, baseando-se em comportamentos reais e recorrentes.</li>
+      <ul style={{ marginTop: "1em", marginBottom: "1.5em", paddingLeft: "1.25em" }}>
+        <li style={{ marginBottom: "0.6em" }}>
+          <strong>Duração estimada:</strong> cerca de 10 a 15 minutos.
+        </li>
+        <li style={{ marginBottom: "0.6em" }}>
+          Realize o teste em um ambiente calmo, sem interrupções.
+        </li>
+        <li style={{ marginBottom: "0.6em" }}>
+          Cada pergunta tem limite de tempo. Após esse tempo, a questão será bloqueada.
+        </li>
+        <li>
+          Responda com sinceridade e foco, considerando comportamentos reais e recorrentes.
+        </li>
       </ul>
 
-      <h2>🔍 Como responder</h2>
+      <h2 style={{ fontSize: "1.18rem", fontWeight: 600, margin: "1.2em 0 0.5em 0" }}>
+        Como responder
+      </h2>
 
-      <p>As perguntas possuem opções como:</p>
-
-      <ul>
+      <p style={{ marginBottom: "0.6em" }}>
+        As perguntas apresentam opções como:
+      </p>
+      <ul style={{ marginBottom: "1.2em", paddingLeft: "1.25em" }}>
         <li><strong>Nunca</strong> – O comportamento não ocorre.</li>
         <li><strong>Às vezes</strong> – Ocorre em situações pontuais.</li>
         <li><strong>Frequentemente</strong> – Ocorre em boa parte das situações.</li>
         <li><strong>Quase sempre</strong> – É uma característica constante.</li>
       </ul>
 
-      <div style={{ marginTop: "1.5em", padding: "1em", background: "#f0f0f0", borderRadius: "8px" }}>
+      <div style={{
+        marginTop: "1.5em",
+        padding: "1em 1.2em",
+        background: corDestaque,
+        borderRadius: "0.75em",
+        border: `1.5px solid ${corBorda}`,
+        marginBottom: "2em"
+      }}>
         <strong>Exemplo:</strong>
-        <p>“Você se distrai facilmente durante conversas importantes?”</p>
-        <p><em>Se isso acontece ocasionalmente, marque "Às vezes". Se for constante, marque "Quase sempre".</em></p>
+        <p style={{ margin: "0.5em 0 0.2em 0" }}>Você se distrai facilmente durante conversas importantes?</p>
+        <p style={{ color: "#475569", fontSize: "0.97em" }}>
+          Se isso acontece ocasionalmente, marque "Às vezes". Se for constante, marque "Quase sempre".
+        </p>
       </div>
 
       <button
         onClick={iniciarTeste}
         style={{
           marginTop: "2em",
-          padding: "1em 2em",
-          backgroundColor: "#4f46e5",
-          color: "white",
+          padding: "0.85em 2.2em",
+          backgroundColor: corPrimaria,
+          color: "#fff",
           border: "none",
-          borderRadius: "8px",
+          borderRadius: "0.75em",
+          fontWeight: 600,
+          fontSize: "1.08em",
           cursor: "pointer",
-          fontSize: "1.1em",
+          letterSpacing: "0.02em",
+          boxShadow: "0 2px 12px #2563eb30",
+          transition: "background 0.2s, color 0.2s"
         }}
       >
-        Iniciar Teste →
+        Iniciar Teste
       </button>
 
-      <p style={{ fontSize: "0.8em", marginTop: "1.5em", color: "#555" }}>
-       📌 As perguntas deste teste foram adaptadas com base em instrumentos de referência clínica como o <strong>ADOS-2</strong> (Autism Diagnostic Observation Schedule, 2ª edição) e o <strong>ADI-R</strong> (Autism Diagnostic Interview – Revised). Estes instrumentos são amplamente utilizados por especialistas para avaliação formal de TEA. O NeuroScan utiliza uma versão simplificada e não diagnóstica, com fins exclusivamente educativos e de triagem.
+      <p style={{ fontSize: "0.9em", marginTop: "2em", color: "#64748b" }}>
+        As perguntas deste teste são inspiradas em instrumentos de referência clínica como o <strong>ADOS-2</strong> e o <strong>ADI-R</strong>.  
+        O NeuroScan utiliza uma versão adaptada para triagem digital, sem finalidade diagnóstica, mas com rigor científico.
       </p>
-
     </div>
   );
 }

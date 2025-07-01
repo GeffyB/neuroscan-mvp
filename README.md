@@ -1,4 +1,3 @@
-
 # NeuroScan – MVP de Triagem Digital para Neurodivergências
 
 Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de condições como **TEA**, **TDAH**, **TOD** e **Altas Habilidades**. O objetivo é fornecer uma triagem inicial (não diagnóstica), coletar leads qualificados e encaminhar para avaliação profissional.
@@ -9,9 +8,10 @@ Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de 
 
 - Next.js (App Router)
 - TypeScript
-- Tailwind CSS
-- ESLint
-- Zustand
+- Zustand (gerenciamento de estado global)
+- Firebase Firestore (persistência dos resultados)
+- Tailwind CSS (apenas vestígios no setup, uso majoritário de CSS-in-JS)
+- ESLint (boas práticas)
 - EmailJS / Nodemailer (em breve)
 
 ---
@@ -24,10 +24,19 @@ Este é o MVP do **NeuroScan**, um WebApp interativo para triagem indicativa de 
 | `/cadastro`  | Formulário de identificação          |
 | `/instrucoes`| Explicação do teste e boas práticas  |
 | `/teste`     | Perguntas adaptadas com timer        |
-| `/resultado` | Resultado parcial com feedback       |
-| `/fim`       | Agradecimento e chamada para ação    |
+| `/resultado` | Resultado parcial com feedback e gravação no Firestore |
+| `/fim`       | Agradecimento e orientação final      |
 
-> ⚠️ Navegação direta entre páginas só está habilitada em modo de desenvolvimento (`NODE_ENV=development`).
+---
+
+## Funcionalidades Principais
+
+- Cadastro validado (nome, email, telefone – DDD 2 dígitos e telefone 8/9 dígitos)
+- Fluxo seguro anti-cheat (bloqueia navegação/reload no teste)
+- Sorteio inteligente de 20 perguntas (5 por categoria, faixa etária adaptada)
+- Timer individual em cada pergunta
+- Salvamento automático do resultado e respostas no Firestore ao final do teste
+- Layout responsivo, visual profissional e acessível
 
 ---
 
@@ -47,7 +56,7 @@ Depois, acesse no navegador:
 
 ## Versão Atual
 
-- **v0.8.1** – Controle de fluxo anti-cheat/back/refresh no teste, validação robusta de cadastro (nome, email, telefone, data e campos obrigatórios), prontidão para integração de persistência de dados.
+- **v0.9.0** – Integração com Firebase Firestore (persistência de resultados), refinamento visual, validações incrementadas, fluxo de navegação e proteção contra manipulação.
 
 ---
 
@@ -55,6 +64,7 @@ Depois, acesse no navegador:
 
 | Versão   | Data       | Descrição                                                                 |
 |----------|------------|---------------------------------------------------------------------------|
+| v0.9.0   | 2025-07-02 | Integração Firestore, paleta profissional, validação e UX aprimorada      |
 | v0.8.1   | 2025-07-01 | Controle anti-cheat/back/refresh e validação reforçada no cadastro        |
 | v0.8.0   | 2025-06-12 | Refinamento visual, responsividade e unificação da identidade visual      |
 | v0.7.2   | 2025-05-04 | Reformulação visual do cadastro (telefone, WhatsApp, campos bem espaçados)|
@@ -69,15 +79,18 @@ Depois, acesse no navegador:
 
 ---
 
-## Novidades da v0.8.1
+## Novidades da v0.9.0
 
-- Controle de fluxo: Usuários que tentam voltar/recarregar a página durante o teste são redirecionados para o cadastro e precisam recomeçar.
-- Validações robustas em todos os campos do cadastro, evitando dados inválidos.
-- Pronto para futura integração com backend de persistência (ex: Firebase).
-- Manutenção facilitada e código mais seguro para coleta de feedback real.
+- **Firebase Firestore:** resultado e respostas agora são salvos automaticamente, garantindo persistência dos dados.
+- **Validação refinada:** DDD e telefone com limitação de dígitos já no input; bloqueios redundantes para evitar erros.
+- **Visual:** layout e paleta mais sóbrios, identidade visual alinhada ao perfil profissional e acolhedor da plataforma.
+- **Fluxo:** anti-cheat reforçado, timers confiáveis, navegação guiada e segura.
 
 ---
 
 ## ⚖️ Aviso Legal
 
-Este sistema **não substitui avaliação médica** e está em fase de prototipagem. Todos os dados devem ser tratados conforme boas práticas de privacidade e segurança (LGPD).
+Este sistema **não substitui avaliação médica** e está em fase de prototipagem. Todos os dados devem ser tratados conforme boas práticas de privacidade e segurança (LGPD).  
+Os resultados têm caráter exclusivamente indicativo e não constituem diagnóstico definitivo.
+
+---

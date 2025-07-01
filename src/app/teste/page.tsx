@@ -1,6 +1,5 @@
 // ===============================================
-// 📄 ARQUIVO: src/app/teste/page.tsx
-// 🎯 OBJETIVO: Sorteio e execução do teste dinâmico com base clínica
+// 📄 ARQUIVO: src/app/teste/page.tsx (refinado)
 // ===============================================
 
 "use client";
@@ -17,7 +16,6 @@ export default function Teste() {
     perguntasSorteadas,
     setPerguntasSorteadas,
     adicionarResposta,
-    // resetAll, // REMOVIDO porque não existe no store (ainda!)
   } = useUserStore();
 
   const [indiceAtual, setIndiceAtual] = useState(0);
@@ -25,22 +23,28 @@ export default function Teste() {
   const [respostaSelecionada, setRespostaSelecionada] = useState<number | null>(null);
   const [podeAvancar, setPodeAvancar] = useState(false);
 
-  // === Bloco Anti-cheat/Back/Refresh ==========
+  // Paleta e estilo visual padronizado
+  const corFundo = "#F6F9FB";
+  const corPrimaria = "#2563eb";
+  const corSecundaria = "#1e293b";
+  const corBotao = "#2563EB";
+  const corBotaoSelecionado = "#1e40af";
+  const corBorda = "#cbd5e1";
+
+  // Controle de anti-cheat
   useEffect(() => {
-    // Nome maroto pro nosso token
     const neuroTokenMaluquinho = localStorage.getItem("neuroTokenMaluquinho");
     if (!neuroTokenMaluquinho) {
-      // Aqui seria a limpeza de dados, mas por enquanto não precisa!
-      // Sinaliza para o cadastro o motivo
-      localStorage.setItem("neuroAlerta", "⚠️ Você tentou voltar ou recarregar a página durante o teste. Para garantir resultados confiáveis, é necessário reiniciar o cadastro e começar do zero.");
+      localStorage.setItem(
+        "neuroAlerta",
+        "Você tentou voltar ou recarregar a página durante o teste. Para garantir resultados confiáveis, é necessário reiniciar o cadastro e começar do zero."
+      );
       router.replace("/cadastro");
     }
-    // Remove o alerta assim que acessa o teste normalmente
     return () => {
       localStorage.removeItem("neuroAlerta");
     };
   }, []);
-  // ============================================
 
   function sortearPerguntas() {
     const idade = avaliado?.idade || 18;
@@ -98,13 +102,27 @@ export default function Teste() {
     if (indiceAtual + 1 < perguntas.length) {
       setIndiceAtual(indiceAtual + 1);
     } else {
-      // Teste finalizado, pode remover o token
       localStorage.removeItem("neuroTokenMaluquinho");
       router.push("/resultado");
     }
   };
 
-  if (!perguntaAtual) return <p>🔃 Carregando teste...</p>;
+  if (!perguntaAtual)
+    return (
+      <div
+        style={{
+          maxWidth: 700,
+          margin: "0 auto",
+          padding: "2em 1em",
+          fontFamily: "'Inter', sans-serif",
+          color: corSecundaria,
+          background: corFundo,
+          minHeight: "100vh",
+        }}
+      >
+        <p>Carregando teste...</p>
+      </div>
+    );
 
   return (
     <div
@@ -113,17 +131,25 @@ export default function Teste() {
         margin: "0 auto",
         padding: "2em 1em",
         fontFamily: "'Inter', sans-serif",
-        color: "#1f2937",
+        color: corSecundaria,
+        background: corFundo,
+        minHeight: "100vh",
       }}
     >
-      <h1 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1em", display: "flex", alignItems: "center", gap: "0.5em" }}>
-        🧠 Teste NeuroScan
+      <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "1em", letterSpacing: "-0.02em" }}>
+        Teste NeuroScan
       </h1>
 
-      <p style={{ marginBottom: "0.5em" }}><strong>{indiceAtual + 1} / {perguntas.length}</strong></p>
-      <p style={{ marginBottom: "1em" }}>⏱️ Tempo restante: {tempoRestante}s</p>
+      <p style={{ marginBottom: "0.5em" }}>
+        <strong>{indiceAtual + 1} / {perguntas.length}</strong>
+      </p>
+      <p style={{ marginBottom: "1.2em", fontWeight: 500 }}>
+        Tempo restante: <span style={{ color: corPrimaria }}>{tempoRestante}s</span>
+      </p>
 
-      <h2 style={{ fontSize: "1.25rem", marginBottom: "1em" }}>{perguntaAtual.texto}</h2>
+      <h2 style={{ fontSize: "1.18rem", marginBottom: "1em", fontWeight: 600 }}>
+        {perguntaAtual.texto}
+      </h2>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.75em", marginTop: "1em" }}>
         {perguntaAtual.respostas.map((resposta, index) => (
@@ -139,11 +165,16 @@ export default function Teste() {
               width: "100%",
               padding: "0.75em 1em",
               borderRadius: "0.75em",
-              border: "1px solid #3B82F6",
-              backgroundColor: respostaSelecionada === resposta.valor ? "#2563EB" : "#DBEAFE",
-              color: respostaSelecionada === resposta.valor ? "#fff" : "#1E40AF",
+              border: `1.5px solid ${corPrimaria}`,
+              backgroundColor: respostaSelecionada === resposta.valor
+                ? corPrimaria
+                : "#fff",
+              color: respostaSelecionada === resposta.valor
+                ? "#fff"
+                : corBotaoSelecionado,
               fontWeight: 500,
-              cursor: "pointer",
+              fontSize: "1.08rem",
+              cursor: tempoRestante === 0 ? "not-allowed" : "pointer",
               transition: "background-color 0.2s",
             }}
           >
@@ -158,17 +189,20 @@ export default function Teste() {
         style={{
           marginTop: "2em",
           padding: "0.75em 1.5em",
-          backgroundColor: "#7C3AED",
+          backgroundColor: corPrimaria,
           color: "#fff",
           border: "none",
           borderRadius: "0.75em",
           fontWeight: 600,
+          fontSize: "1.05em",
           cursor: podeAvancar ? "pointer" : "not-allowed",
-          opacity: podeAvancar ? 1 : 0.5,
+          opacity: podeAvancar ? 1 : 0.6,
+          letterSpacing: "0.02em",
+          boxShadow: "0 2px 12px #2563eb30",
           transition: "background-color 0.2s",
         }}
       >
-        {indiceAtual + 1 === perguntas.length ? "Finalizar Teste" : "Próxima →"}
+        {indiceAtual + 1 === perguntas.length ? "Finalizar Teste" : "Próxima"}
       </button>
     </div>
   );
